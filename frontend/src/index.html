@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Frontend top</title>
+
+        <link rel="stylesheet" href="style.css" />
+
+        <script type="module" src="main.js" charset="utf-8"></script>
+    </head>
+    <body>
+
+        <header>
+            <h1>Meu frontend</h1>
+            <nav>
+                <ul id="main-navigation">
+                    <li>inclusão de registros</li>
+                    <li>consultas</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form id="search-bar">
+
+                <fieldset>
+                    <label for="query-type">tipo da consulta</label>
+                    <select id="query-type">
+                    <option value="month">aniversariantes do mês</option>
+                    <option value="department">colaboradores por departamento</option>
+                    <option value="branch">ramais</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label for="main-search-input">valor referência</label>
+                    <input type="text" id="main-search-input" />
+                </fieldset>
+
+                <button type="button" id="send-query-button">listar</button>
+
+            </form>
+            
+            <table id="fetched-data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">name</th>
+                        <th scope="col">data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>felipe</td>
+                        <td>08/06/1985</td>
+                    </tr>
+                    <tr>
+                        <td>danila</td>
+                        <td>08/06/1977</td>
+                    </tr>
+                    <tr>
+                        <td>jubiscleide</td>
+                        <td>08/06/1985</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

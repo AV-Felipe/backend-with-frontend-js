@@ -1,0 +1,76 @@
+/* GENERAL RULES */
+
+html {
+    font-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    max-width: 800px;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    row-gap: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items:center;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+#main-navigation {
+    display: flex;
+    column-gap: 20px;
+
+}
+
+/* SEARCH TAB */
+
+#search-bar {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#search-bar fieldset {
+    border: none;
+}
+
+/* RESULT DISPLAY */
+
+#fetched-data-table th {
+    font-weight: bold;
+    background-color: tomato;
+    padding: 5px;
+}
+
+#fetched-data-table td {
+    padding: 3px;
+}
+
+#fetched-data-table tbody tr:nth-child(even){
+    background-color: wheat;
+}

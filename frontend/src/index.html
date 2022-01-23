@@ -25,17 +25,36 @@
             <form id="search-bar">
 
                 <fieldset>
+
                     <label for="query-type">tipo da consulta</label>
+
                     <select id="query-type">
-                    <option value="month">aniversariantes do mês</option>
-                    <option value="department">colaboradores por departamento</option>
-                    <option value="branch">ramais</option>
+                        <option value="month">aniversariantes do mês</option>
+                        <option value="department">colaboradores por departamento</option>
+                        <option value="branch">ramais</option>
                     </select>
+
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="main-search-input-area">
+
                     <label for="main-search-input">valor referência</label>
-                    <input type="text" id="main-search-input" />
+
+                    <select id="main-search-input">
+                        <option value="01">janeiro</option>
+                        <option value="02">fevereiro</option>
+                        <option value="03">março</option>
+                        <option value="04">abril</option>
+                        <option value="05">maio</option>
+                        <option value="06">junho</option>
+                        <option value="07">julho</option>
+                        <option value="08">agosto</option>
+                        <option value="09">setembro</option>
+                        <option value="10">outubro</option>
+                        <option value="11">novembro</option>
+                        <option value="12">dezembro</option>
+                    </select>
+
                 </fieldset>
 
                 <button type="button" id="send-query-button">listar</button>
@@ -49,20 +68,7 @@
                         <th scope="col">data</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>felipe</td>
-                        <td>08/06/1985</td>
-                    </tr>
-                    <tr>
-                        <td>danila</td>
-                        <td>08/06/1977</td>
-                    </tr>
-                    <tr>
-                        <td>jubiscleide</td>
-                        <td>08/06/1985</td>
-                    </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </main>
     </body>

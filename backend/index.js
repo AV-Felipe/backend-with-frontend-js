@@ -60,11 +60,8 @@ app.get('/people', (req, res) => {
 
 // POST
 app.post('/peoples', (req, res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST');
 
-    console.log(req.body)
-    
+    //console.log(req.body)
     const newEntryObjectFromClient = req.body;
     const currentLastElement = DB_OBJECT.at(-1);
 
@@ -79,6 +76,8 @@ app.post('/peoples', (req, res)=>{
             console.log('Error writing file, ', err);
         }else{
             console.log('successfully wrote file');
+            res.status(201);
+            res.send(`${JSON.stringify(newEntryObject)}`);
         }
     })
     

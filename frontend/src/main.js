@@ -2,6 +2,10 @@
 import { createTableHeader, populateData, updateValueList } from "./modules/data-to-html.js";
 
 // ELEMENTS
+const buttonAddRegister = document.getElementById('link-to-data-add-page');
+const buttonQueryData = document.getElementById('link-to-query-data-page');
+
+const pageDisplay = document.querySelector('main');
 
 const inputQueryType = document.getElementById('query-type');
 const inputQueryValue = document.getElementById('main-search-input');
@@ -16,6 +20,7 @@ buttonSendQuery.addEventListener('click', sendQuery);
 
 inputQueryType.addEventListener('change', updateQueryValues);
 
+
 // FETCH FUNCTIONS
 
 // GET request - route /people - !!! it is actually performing three functions, preparing the display table and fetching data before rendering it
@@ -26,7 +31,7 @@ function sendQuery(){
     //console.log(queryType + queryValue);
     outputTable.innerHTML = createTableHeader(queryType);
 
-    fetch(`http://127.0.0.1:3000/people?${queryType}=${queryValue}`)
+    fetch(`http://192.168.0.100:3000/people?${queryType}=${queryValue}`)
         .then(response => response.json())
         .then(data => {
             data.map((dataObject)=>{
@@ -35,7 +40,7 @@ function sendQuery(){
         });
 }
 
-// FUNCTIONS
+// QUERY PAGE FUNCTIONS
 
 function updateQueryValues() {
 

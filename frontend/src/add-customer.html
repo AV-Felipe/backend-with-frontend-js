@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Frontend top</title>
+
+        <link rel="stylesheet" href="style.css" />
+
+        <script type="module" src="add-customer.js" charset="utf-8"></script>
+    </head>
+    <body>
+
+        <header>
+            <h1>Meu frontend</h1>
+            <nav>
+                <ul id="main-navigation">
+                    <li id="link-to-data-add-page">inclusão de registros</li>
+                    <li id="link-to-query-data-page"><a href="index.html">consultas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <form>
+                <fieldset>
+
+                    <legend>Cadastro de colaborador</legend>
+
+                    <fieldset>
+                        <label for="input-name">Nome:</label>
+                        <input id="input-name" type="text" required minlength="3" maxlength="50" name="name" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="input-birthday">Aniversário:</label>
+                        <input id="input-birthday" type="date" name="birthDate" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="input-email">E-mail:</label>
+                        <input id="input-email" type="email" required minlength="3" maxlength="50" name="email" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="input-branchline">Ramal:</label>
+                        <input id="input-branchline" type="number" min="0" max="99999" name="branchLine" />
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="input-department">Departamento:</label>
+                        <select id="input-department" required name="department">
+                            <option value="Health Care">Health Care</option>
+                            <option value="Consumer Durables">Consumer Durables</option>
+                            <option value="Consumer Non-Durables">Consumer Non-Durables</option>
+                            <option value="n/a">n/a</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                            <option value="Capital Goods">Capital Goods</option>
+                            <option value="Basic Industries">Basic Industries</option>
+                            <option value="Consumer Services">Consumer Services</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Public Utilities">Public Utilities</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Transportation">Transportation</option>
+                        </select>
+                    </fieldset>
+
+                    <button type="button" id="input-submit">Cadastrar</button>
+                </fieldset>
+            </form>
+        
+        </main>
+
+    </body>
+</html>

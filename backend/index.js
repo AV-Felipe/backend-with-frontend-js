@@ -4,10 +4,15 @@ const app = express();
 
 const fs = require('fs');
 
+const cors = require('cors'); //view: https://expressjs.com/en/resources/middleware/cors.html
+
 const port = 3000;
 
 // MIDDLEWARE
 app.use(express.json());
+
+//Enable All CORS Requests
+app.use(cors());
 
 // MOCK DB
 const DB_TEXT_FILE = fs.readFileSync('./mock-data.json');
@@ -29,8 +34,8 @@ app.get('/people', (req, res) => {
     //define the allowed origins and list possible methods for cross origins scenarios - in production, we would use the actual domain names
     //a more controlled way to do this would be to use the express cors middleware: https://expressjs.com/en/resources/middleware/cors.html
     //res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8080');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    //res.setHeader('Access-Control-Allow-Origin', '*');
+    //res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
     
     if('month' in req.query){
         let month = req.query.month;
@@ -59,11 +64,11 @@ app.post('/peoples', (req, res)=>{
     res.setHeader('Access-Control-Allow-Methods', 'POST');
 
     console.log(req.body)
-    /*
-    const newEntryObject = req.body;
+    
+    const newEntryObjectFromClient = req.body;
     const currentLastElement = DB_OBJECT.at(-1);
 
-    const newEntryObject = includeNewRegister(newEntryObject, currentLastElement);
+    const newEntryObject = includeNewRegister(newEntryObjectFromClient, currentLastElement);
 
     DB_OBJECT.push(newEntryObject);
 
@@ -76,7 +81,7 @@ app.post('/peoples', (req, res)=>{
             console.log('successfully wrote file');
         }
     })
-    */
+    
 })
 
 // custom 404 page

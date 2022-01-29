@@ -1,0 +1,39 @@
+Referências básicas:
+
+• Classes em Javascript:
+o https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
+o https://www.w3schools.com/js/js_classes.asp
+o https://www.devmedia.com.br/classes-no-javascript/23866
+
+Exercícios:
+
+1. Criar uma classe 'Calculadora' que possua os seguintes atributos e métodos:
+
+a. Atributos:
+
+i. operand1;
+
+ii. operand2;
+
+iii. operation.
+
+b. Métodos:
+
+i. setOperand1(_operand1): responsável por definir o primeiro operando;
+
+ii. setOperand2(_operand2): responsável por definir o segundo operando;
+
+iii. setOperation(_operation): responsável por definir o tipo de operação
+('soma', 'subtracao', 'divisao', 'multiplicacao');
+
+iv. getResult(): retorna o resultado da operação se possível ou erro caso
+contrário (informar o erro da operação);
+
+v. clearCalculator(): retorna os valores padrão para 'operand1', 'operand2',
+'operation'
+
+2. Criar uma página que utilize a classe 'Calculadora' e permita ao usuário fazer as 4 operações
+básicas de matemática clicando nos botões '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', 'x',
+'/', '='.
+
+3. Publique os exercícios 1 e 2 em seu repositório do GitHub.

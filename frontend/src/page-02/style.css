@@ -1,0 +1,186 @@
+html {
+    font-size: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    min-width: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+    background-image: url(assets/images/Wood-Pattern-3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+/* COLORS */
+
+:root {
+    --body-color: #cbcdd4;
+    --body-inset-color: #dbdde2;
+    --display-color: #4deca0;
+    --display-color-op2: #d1e7ac;
+}
+
+/* CALCULATOR BODY */
+
+#calculatorBody {
+    width: 345px;
+    height: 450px;
+    background-color: var(--body-color);
+    font-family: 'Red Hat Display', sans-serif;
+    border: 1px solid black;
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px 4px whitesmoke,
+        2px 2px 10px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CALCULATOR DISPLAY */
+
+#calculatorDisplay {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    width: 300px;
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    background-color: var(--display-color-op2);
+    border: 3px inset var(--body-inset-color);
+    padding-left: 5px;
+    font-size: 32px;
+}
+
+/* BUTTONS */
+
+#buttonsArea {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    align-content: space-between;
+}
+
+.buttonPad {
+    width: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+    align-self: flex-start;
+}
+
+.calculatorButtonInset {
+    width: 52px;
+    height: 52px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(75, 75, 75);
+    background-clip: content-box;
+    border-radius: 8px;
+    border: 1px solid rgb(73, 72, 72);
+}
+
+.calculatorButton{
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(41, 41, 41);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background: var(--body-color);
+    background: linear-gradient(180deg, rgba(185,185,185,1) 0%, rgba(220,220,220,1) 48%);
+}
+
+#operationsPad {
+    width: 125px;
+    justify-content: flex-end;
+}
+
+#equalsButtonInset {
+    width: calc(2 * 52px + 5px);
+}
+
+#equalsButton {
+    width: calc(2 * 52px + 5px - 8px);
+}
+
+/* PAPER SHEET */
+
+.paperSheet {
+    width: 345px;
+    height: 450px;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+#handCalc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.handTitle {
+    width: 230px;
+}
+
+.paperSheet input {
+    font-family: 'Handlee', cursive;
+    font-size: 24px;
+    background-color: whitesmoke;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+}
+
+.paperSheet label {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.handButton {
+    width: 52px;
+    height: 52px;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#handResult {
+    width: 200px;
+    height: 32px;
+    border-top: 2px solid black;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

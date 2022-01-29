@@ -83,6 +83,37 @@ app.post('/peoples', (req, res)=>{
     
 })
 
+app.get('/calculator', (req, res)=>{
+    let operand1 = Number(req.query.op1);
+    console.log(operand1)
+    let operand2 = Number(req.query.op2);
+    console.log(operand2)
+    let operation = req.query.opr;
+    console.log(operation)
+
+    switch (operation){
+        case 'sum':
+            res.type('json');
+            res.send(JSON.stringify({result: operand1 + operand2}));
+        break;
+    case 'sub':
+        res.type('json');
+        res.send(JSON.stringify({result: operand1 - operand2}));
+        break;
+    case 'mul':
+        res.type('json');
+        res.send(JSON.stringify({result: operand1 * operand2}));
+        break;
+    case 'div':
+        res.type('json');
+        res.send(JSON.stringify({result: operand1 / operand2}));
+        break;
+    default:
+        console.log('invalid operation');
+        return ('error');
+    }
+})
+
 // custom 404 page
 app.use((req, res) => {
 	res.type('text/plain')

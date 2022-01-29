@@ -38,16 +38,16 @@ function Calculator() {
 
             switch (operation){
                 case '+':
-                chosenOperation = '+';
+                chosenOperation = 'sum';
                 break;
             case '-':
-                chosenOperation = '-';
+                chosenOperation = 'sub';
                 break;
             case '*':
-                chosenOperation = '*';
+                chosenOperation = 'mul';
                 break;
             case '/':
-                chosenOperation = '/';
+                chosenOperation = 'div';
                 break;
             default:
                 console.log('invalid operation');
@@ -56,34 +56,17 @@ function Calculator() {
     
         },
 
-        getResult: ()=>{
+        getResult: async ()=>{
             if(operand1 && operand2 && chosenOperation){
                 let result;
-                switch (chosenOperation){
-                    case '+':
-                        result = operand1 + operand2;
-                        console.log(result);
-                        clearCalculator();
-                        return(result);
-                    case '-':
-                        result = operand1 - operand2;
-                        console.log(result);
-                        clearCalculator();
-                        return(result);
-                    case '*':
-                        result = operand1 * operand2;
-                        console.log(result);
-                        clearCalculator();
-                        return(result);
-                    case '/':
-                        result = operand1 / operand2;
-                        console.log(result);
-                        clearCalculator();
-                        return(result);
-                    default:
-                        console.log('wtf');
-                        return ('error');
-                }
+
+                fetch(`http://127.0.0.1:3000/calculator?op1=${operand1}&op2=${operand2}&opr=${chosenOperation}`)
+                .then(response => response.json())
+                .then(data => {console.log(data); result(data.result); console.log(result)})
+            
+                return new Promise((resolve)=>{
+                    result = resolve;
+                });
                 
             }else{
                 console.log('one or more fields are not set');

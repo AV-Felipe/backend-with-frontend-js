@@ -45,7 +45,7 @@ function readButtonValue(event){
     }
 }
 
-function getOperation(event){
+async function getOperation(event){
     console.log(event.target.id)
 
 
@@ -79,7 +79,7 @@ function getOperation(event){
 
             if(values[0] !== '' && values[1] !== ''){
                 calculator.setOperand2(values[1]);
-                result = calculator.getResult();
+                result = await calculator.getResult();
                 console.log(result);
                 calculatorDisplay.innerText = result;
                 values[0] = '';
